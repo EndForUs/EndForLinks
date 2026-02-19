@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#000000">
+    <title>EndForLinks</title>
+    <meta name="description"
+        content="Todo sobre EndForUs en un solo lugar, asi de sencillo">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Google Fonts: Inter Tight (Display) & Roboto Mono (Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@800;900&family=Roboto+Mono:wght@300;400&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="./resources/icon/icon.ico" type="image/ico">
+
+    <!-- Phosphor Icons (versión fija para estabilidad) -->
+    <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+</head>
+
+<body>
+
+    <!-- ═══════════════════════════════════════
+         Y2K BACKGROUND CANVAS
+    ════════════════════════════════════════ -->
+    <canvas id="y2k-bg" aria-hidden="true"></canvas>
+
+    <!-- ═══════════════════════════════════════
+         TOP BAR — Fixed navigation trigger
+    ════════════════════════════════════════ -->
+    <nav class="top-bar" id="top-bar">
+        <div class="top-bar-brand">E4U5</div>
+        <button class="menu-btn" id="menu-btn" aria-label="Abrir menú" aria-expanded="false">
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+        </button>
+    </nav>
+
+    <!-- ═══════════════════════════════════════
+         NAV OVERLAY — Fullscreen menu
+    ════════════════════════════════════════ -->
+    <div class="nav-overlay" id="nav-overlay" aria-hidden="true">
+        <div class="nav-overlay-inner">
+            <button class="nav-close-btn" id="nav-close-btn" aria-label="Cerrar menú">
+                <i class="ph ph-x"></i>
+            </button>
+
+            <div class="nav-identity">
+                <span class="nav-name">EndForUs</span>
+            </div>
+
+            <nav class="nav-links" aria-label="Navegación principal">
+                <a href="#hero" class="nav-link" data-close-menu>
+                    <span class="nav-num">01</span>
+                    <span class="nav-label">INICIO</span>
+                </a>
+                <a href="#cat-1" class="nav-link" data-close-menu>
+                    <span class="nav-num">02</span>
+                    <span class="nav-label">PRODUCER MATERIAL</span>
+                </a>
+                <a href="#cat-2" class="nav-link" data-close-menu>
+                    <span class="nav-num">03</span>
+                    <span class="nav-label">CONTACTO EXCLUSIVO</span>
+                </a>
+                <a href="#cat-3" class="nav-link" data-close-menu>
+                    <span class="nav-num">04</span>
+                    <span class="nav-label">LA PRESENCIA</span>
+                </a>
+                <a href="#pensamiento" class="nav-link" data-close-menu>
+                    <span class="nav-num">05</span>
+                    <span class="nav-label">PENSAMIENTOS</span>
+                </a>
+            </nav>
+
+            <div class="nav-footer">
+                <div class="nav-social">
+                    <a href="https://www.instagram.com/_endforus/" aria-label="Instagram" target="_blank"><i class="ph ph-instagram-logo"></i></a>
+                    <a href="https://x.com/EndForUX" aria-label="X" target="_blank"><i class="ph ph-x-logo"></i></a>
+                    <a href="#" aria-label="TikTok"><i class="ph ph-tiktok-logo"></i></a>
+                    <a href="https://t.me/+YPSlUatYZYNjMjJh" aria-label="Telegram" target="_blank"><i class="ph ph-telegram-logo"></i></a>
+                    <a href="https://patreon.com/EndForUs?utm_medium=unknown&utm_source=join_link&utm_campaign=creatorshare_creator&utm_content=copyLink" aria-label="Patreon" target="_blank"><i class="ph ph-patreon-logo"></i></a>
+                    <a href="https://endforus.github.io" aria-label="Website" target="_blank"><i class="ph ph-globe"></i></a>
+                    <a href="https://www.pinterest.com/EndForUs/" aria-label="Pinterest" target="_blank"><i class="ph ph-pinterest-logo"></i></a>
+                </div>
+                <p class="nav-credits">Curated by EndForUs &mdash; 2026</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════
+         MAIN CONTENT
+    ════════════════════════════════════════ -->
+    <main class="container">
+
+        <!-- ── HERO CARD ──────────────────── -->
+        <section id="hero" class="hero-card">
+            <div class="clock-display" id="clock">00:00:00</div>
+
+            <h1 class="username">EndForUs</h1>
+
+            <div class="avatar-container">
+                <img src="./resources/profile/profile.webp" alt="Foto de perfil de EndForUs" class="avatar">
+            </div>
+
+            <p class="bio">Bienvenido a donde comparto mis pensamientos contigo, siendo un lugar para ti y para mí.</p>
+
+            <div class="hero-actions">
+                <button class="btn-action btn-copy" id="copy-btn" onclick="copyToClipboard()">
+                    <i class="ph ph-link"></i> COPY LINK
+                </button>
+                <a href="https://endforus.github.io" class="btn-action btn-web" target="_blank">
+                    <i class="ph ph-globe"></i> WEBSITE
+                </a>
+            </div>
+                <button class="btn-action btn-copy" id="email-btn" onclick="copyEmail()">
+                    <i class="ph ph-link"></i> EMAIL
+                </button>
+            <div>
+                
+            </div>
+
+            <div class="scroll-arrow" aria-hidden="true">
+                <i class="ph ph-arrow-down"></i>
+            </div>
+        </section>
+
+        <!-- ── SECCIÓN 1: SAMPLE PACKS ────── -->
+        <section id="cat-1" class="link-section reveal">
+            <h2 class="section-title">PRODUCER MATERIAL</h2>
+            <div class="btn-grid">
+                <!-- Full width -->
+                <a href="mailto:contactwiththeend@gmail.com" class="link-btn btn-full" target="_blank">
+                    <span class="btn-title">Mezcla y Mastering</span>
+                    <span class="btn-desc">Contacto y apoyo para mezcla y mastering</span>
+                </a>
+                <!-- Half + Half -->
+                <a href="https://www.patreon.com/posts/lofi-pack-vol-1-149051893?utm_medium=clipboard_copy&utm_source=copyLink&utm_campaign=postshare_creator&utm_content=join_link" class="link-btn btn-half" target="_blank">
+                    <span class="btn-title">LOFI PACK VOL. 1</span>
+                    <span class="btn-desc">Sample Pack para mejorar tus canciones</span>
+                </a>
+                <div class="btn-filler" aria-hidden="true">
+                    <span class="filler-text">EndForUs</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── SECCIÓN 2: CONTACTO ────────── -->
+        <section id="cat-2" class="link-section reveal">
+            <h2 class="section-title">CONTACTO EXCLUSIVO</h2>
+            <div class="btn-grid">
+                <!-- Full width -->
+                <a href="mailto:contactwiththeend@gmail.com" class="link-btn btn-full" target="_blank">
+                    <span class="btn-title">COLABORACIONES</span>
+                    <span class="btn-desc">Correo directo para proyectos y colaboraciones</span>
+                </a>
+                <!-- Half + Filler -->
+                <a href="https://endforus.github.io" class="link-btn btn-half" target="_blank">
+                    <span class="btn-title">MODO ENCUESTA</span>
+                    <span class="btn-desc">Si quieres apoyarte de una encuesta, puedes hacerlo por aquí</span>
+                </a>
+                <div class="btn-filler" aria-hidden="true">
+                    <span class="filler-text">EndForUs</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── SECCIÓN 3: LA PRESENCIA ────── -->
+        <section id="cat-3" class="link-section reveal">
+            <h2 class="section-title">LA PRESENCIA</h2>
+            <div class="btn-grid">
+                <!-- Full width -->
+                <a href="https://endforus.github.io" class="link-btn btn-full" target="_blank">
+                    <span class="btn-title">SITIO OFICIAL</span>
+                    <span class="btn-desc">Un lugar para conocerme más a fondo y de manera oficial</span>
+                </a>
+                <!-- Half + Half -->
+                <a href="https://x.com/EndForUX" class="link-btn btn-half" target="_blank">
+                    <span class="btn-title">X</span>
+                    <span class="btn-desc">Plataforma para conversaciones y contenido</span>
+                </a>
+                <a href="https://patreon.com/EndForUs?utm_medium=unknown&utm_source=join_link&utm_campaign=creatorshare_creator&utm_content=copyLink" class="link-btn btn-half" target="_blank">
+                    <span class="btn-title">PATREON</span>
+                    <span class="btn-desc">Apoyarme financiando mi trabajo</span>
+                </a>
+                <a href="#" class="link-btn btn-half">
+                    <span class="btn-title">TIKTOK</span>
+                    <span class="btn-desc">Otro lado por donde me puedes conseguir</span>
+                </a>
+                <a href="https://www.instagram.com/_endforus/" class="link-btn btn-half" target="_blank">
+                    <span class="btn-title">INSTAGRAM</span>
+                    <span class="btn-desc">Donde comencé todo y subo contenido</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- ── BENTO GRID ──────────────────── -->
+        <section class="bento-grid reveal">
+            <a href="#img1" class="bento-item">
+                <img src="https://picsum.photos/400/400?grayscale&random=1" alt="Project 1" loading="lazy" width="400"
+                    height="400">
+                <span class="bento-caption">Architecture</span>
+            </a>
+            <a href="#img2" class="bento-item">
+                <img src="https://picsum.photos/400/400?grayscale&random=2" alt="Project 2" loading="lazy" width="400"
+                    height="400">
+                <span class="bento-caption">Texture</span>
+            </a>
+            <a href="#img3" class="bento-item">
+                <img src="https://picsum.photos/400/400?grayscale&random=3" alt="Project 3" loading="lazy" width="400"
+                    height="400">
+                <span class="bento-caption">Light</span>
+            </a>
+            <a href="#img4" class="bento-item">
+                <img src="https://picsum.photos/400/400?grayscale&random=4" alt="Project 4" loading="lazy" width="400"
+                    height="400">
+                <span class="bento-caption">Form</span>
+            </a>
+        </section>
+
+        <!-- ── PENSAMIENTOS ────────────────── -->
+        <section id="pensamiento" class="extra-container reveal">
+            <h3 class="section-label">PENSAMIENTO</h3>
+            <p>El fin es un motivo para el proceso<br>y el proceso es un motivo para el fin.</p>
+        </section>
+
+        <!-- ── E4U5 BLOCK ──────────────────── -->
+        <div class="e4u5-block">
+            <span class="e4u5-logo">E4U5</span>
+        </div>
+
+        <!-- ── FOOTER ─────────────────────── -->
+        <footer class="footer">
+            <div class="credits">
+                <p>Curated by EndForUs &mdash; 2026 Edition</p>
+                <p class="design-credit">Diseño Clean-Tech por EndForUs</p>
+            </div>
+        </footer>
+
+    </main>
+
+    <!-- ═══════════════════════════════════════
+         CSS-ONLY LIGHTBOXES
+    ════════════════════════════════════════ -->
+    <div id="img1" class="lightbox">
+        <a href="#_" class="close-overlay"></a>
+        <div class="lightbox-content">
+            <img src="https://picsum.photos/800/800?grayscale&random=1" alt="Project 1 Full">
+            <a href="#_" class="close-btn">&times;</a>
+        </div>
+    </div>
+    <div id="img2" class="lightbox">
+        <a href="#_" class="close-overlay"></a>
+        <div class="lightbox-content">
+            <img src="https://picsum.photos/800/800?grayscale&random=2" alt="Project 2 Full">
+            <a href="#_" class="close-btn">&times;</a>
+        </div>
+    </div>
+    <div id="img3" class="lightbox">
+        <a href="#_" class="close-overlay"></a>
+        <div class="lightbox-content">
+            <img src="https://picsum.photos/800/800?grayscale&random=3" alt="Project 3 Full">
+            <a href="#_" class="close-btn">&times;</a>
+        </div>
+    </div>
+    <div id="img4" class="lightbox">
+        <a href="#_" class="close-overlay"></a>
+        <div class="lightbox-content">
+            <img src="https://picsum.photos/800/800?grayscale&random=4" alt="Project 4 Full">
+            <a href="#_" class="close-btn">&times;</a>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════
+         SCRIPTS
+    ════════════════════════════════════════ -->
+    <script>
+        // ── Clock ──────────────────────────────
+        function updateClock() {
+            document.getElementById('clock').innerText =
+                new Date().toLocaleTimeString('es-ES', { hour12: false });
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+
+        // ── Copy Link ──────────────────────────
+        function copyToClipboard() {
+            navigator.clipboard.writeText(window.location.href);
+            const btn = document.getElementById('copy-btn');
+            const orig = btn.innerHTML;
+            btn.innerHTML = '<i class="ph ph-check"></i> COPIED!';
+            setTimeout(() => btn.innerHTML = orig, 2000);
+        }
+
+        function copyEmail() {
+            const Email = "contactwiththeend@gmail.com"
+            navigator.clipboard.writeText(Email);
+            const btn = document.getElementById('email-btn');
+            const orig = btn.innerHTML;
+            btn.innerHTML = '<i class="ph ph-check"></i> EMAIL COPIED!';
+            setTimeout(() => btn.innerHTML = orig, 2000);
+        }
+
+        // ── Menu Overlay ───────────────────────
+        const menuBtn = document.getElementById('menu-btn');
+        const closeBtn = document.getElementById('nav-close-btn');
+        const overlay = document.getElementById('nav-overlay');
+        const body = document.body;
+
+        function openMenu() {
+            overlay.classList.add('is-open');
+            overlay.setAttribute('aria-hidden', 'false');
+            menuBtn.setAttribute('aria-expanded', 'true');
+            body.classList.add('menu-open');
+        }
+
+        function closeMenu() {
+            overlay.classList.remove('is-open');
+            overlay.setAttribute('aria-hidden', 'true');
+            menuBtn.setAttribute('aria-expanded', 'false');
+            body.classList.remove('menu-open');
+        }
+
+        menuBtn.addEventListener('click', openMenu);
+        closeBtn.addEventListener('click', closeMenu);
+
+        // Close on anchor click + smooth scroll
+        document.querySelectorAll('[data-close-menu]').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const target = document.querySelector(link.getAttribute('href'));
+                closeMenu();
+                setTimeout(() => {
+                    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }, 400);
+            });
+        });
+
+        // ── Top bar scroll effect ──────────────
+        window.addEventListener('scroll', () => {
+            document.getElementById('top-bar').classList.toggle('scrolled', window.scrollY > 40);
+        });
+
+        // ── Scroll Reveal ──────────────────────
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.08 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+
+    <!-- ═══════════════════════════════════════
+         Y2K BACKGROUND SCRIPT
+    ════════════════════════════════════════ -->
+    <script>
+        (function () {
+            const canvas = document.getElementById('y2k-bg');
+            const ctx = canvas.getContext('2d');
+
+            // ── Y2K symbol & text pools ────────────
+            const SYMBOLS = ['★' , '✦', '☿', 'ಠ', '⊗', 'ヅ', '∞', '≠', '＠', 'ඩ', '▲', 'ℹ︎', '♪', '♣︎'];
+            const WORDS = ['E4U5', 'ENDFORUS', '2026', 'GOD', 'UNIQUE', 'US', '∞', 'LINK', 'MUSIC', '19', '10', '14'];
+
+            let W, H, particles;
+
+            // ── Resize ─────────────────────────────
+            function resize() {
+                W = canvas.width = window.innerWidth;
+                H = canvas.height = window.innerHeight;
+                init();
+            }
+
+            // ── Build particle list ─────────────────
+            function init() {
+                particles = [];
+
+                // Grid lines (static, drawn once into offscreen)
+                // Floating symbols
+                const count = Math.min(60, Math.floor((W * H) / 14000));
+                for (let i = 0; i < count; i++) {
+                    particles.push({
+                        type: Math.random() < 0.6 ? 'symbol' : 'word',
+                        text: '', // Set in update loop
+                        x: Math.random() * W,
+                        y: Math.random() * H,
+                        size: Math.random() < 0.15
+                            ? 48 + Math.random() * 60   // occasional large
+                            : 9 + Math.random() * 14,  // small default
+                        opacity: 0.018 + Math.random() * 0.100,
+                        speedX: (Math.random() - 0.5) * 0.12,
+                        speedY: (Math.random() - 0.5) * 0.10,
+                        font: "'Inter Tight', sans-serif",
+                        lastUpdate: Math.random() * 50 // Random offset
+                    });
+                }
+            }
+
+            // ── Helper ─────────────────────────────
+            function getRandomText(type) {
+                return type === 'symbol'
+                    ? SYMBOLS[Math.floor(Math.random() * SYMBOLS.length)]
+                    : WORDS[Math.floor(Math.random() * WORDS.length)];
+            }
+
+            // ── Draw grid ──────────────────────────
+            function drawGrid() {
+                const step = 48;
+                ctx.strokeStyle = 'rgba(255,255,255,0.025)';
+                ctx.lineWidth = 0.5;
+                ctx.beginPath();
+                for (let x = 0; x < W; x += step) {
+                    ctx.moveTo(x, 0); ctx.lineTo(x, H);
+                }
+                for (let y = 0; y < H; y += step) {
+                    ctx.moveTo(0, y); ctx.lineTo(W, y);
+                }
+                ctx.stroke();
+            }
+
+            // ── Draw corner brackets ───────────────
+            function drawBrackets() {
+                const size = 24;
+                const pad = 20;
+                const corners = [
+                    [pad, pad],
+                    [W - pad - size, pad],
+                    [pad, H - pad - size],
+                    [W - pad - size, H - pad - size],
+                ];
+                ctx.strokeStyle = 'rgba(255,255,255,0.08)';
+                ctx.lineWidth = 1.2;
+                corners.forEach(([cx, cy]) => {
+                    ctx.beginPath();
+                    ctx.moveTo(cx + size, cy); ctx.lineTo(cx, cy); ctx.lineTo(cx, cy + size);
+                    ctx.moveTo(cx + size, cy + size); ctx.lineTo(cx + size, cy + size); // placeholder
+                    ctx.stroke();
+                });
+            }
+
+            // ── Main render loop ───────────────────
+            let raf;
+            let lastTime = 0;
+
+            function render(time) {
+                if (!lastTime) lastTime = time;
+                const delta = time - lastTime;
+                lastTime = time;
+
+                ctx.clearRect(0, 0, W, H);
+
+                // Background
+                ctx.fillStyle = '#000000';
+                ctx.fillRect(0, 0, W, H);
+
+                // Grid
+                drawGrid();
+
+                // Corner brackets
+                drawBrackets();
+
+                // Particles
+                particles.forEach(p => {
+                    // Update text every ~100ms
+                    p.lastUpdate += delta;
+                    if (p.lastUpdate > 100) {
+                        p.text = getRandomText(p.type);
+                        p.lastUpdate = 0;
+                    }
+
+                    ctx.save();
+                    ctx.globalAlpha = p.opacity;
+                    ctx.font = `${p.type === 'word' ? '900' : '400'} ${p.size}px ${p.font}`;
+                    ctx.fillStyle = '#ffffff';
+                    ctx.fillText(p.text, p.x, p.y);
+                    ctx.restore();
+
+                    // Drift
+                    p.x += p.speedX;
+                    p.y += p.speedY;
+
+                    // Wrap around edges
+                    if (p.x > W + 80) p.x = -80;
+                    if (p.x < -80) p.x = W + 80;
+                    if (p.y > H + 80) p.y = -80;
+                    if (p.y < -80) p.y = H + 80;
+                });
+
+                raf = requestAnimationFrame(render);
+            }
+
+            // ── Init ───────────────────────────────
+            window.addEventListener('resize', () => {
+                cancelAnimationFrame(raf);
+                resize();
+                requestAnimationFrame(render);
+            });
+
+            resize();
+            requestAnimationFrame(render);
+        })();
+    </script>
+
+
+</body>
+
+</html>
