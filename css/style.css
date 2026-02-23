@@ -1,3 +1,12 @@
+@font-face {
+    font-family: 'DrukWideBold';
+    src: url('../resources/fonts/DrukWideBold.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
 /* ═══════════════════════════════════════════════════
    DESIGN TOKENS
 ════════════════════════════════════════════════════ */
@@ -114,11 +123,10 @@ a {
 }
 
 .top-bar-brand {
-    font-family: var(--font-heading);
+    font-family: "DrukWideBold";
     font-weight: 900;
     font-size: 1rem;
     letter-spacing: 0.05em;
-    border: 1.5px solid var(--color-border);
     padding: 2px 8px;
 }
 
@@ -201,7 +209,7 @@ a {
 }
 
 .nav-name {
-    font-family: var(--font-heading);
+    font-family: "DrukWideBold";
     font-weight: 900;
     font-size: clamp(2.5rem, 10vw, 4rem);
     letter-spacing: -0.03em;
@@ -325,11 +333,12 @@ a {
 
 /* Username */
 .username {
-    font-family: var(--font-heading);
+    font-family: "DrukWideBold";
     font-weight: 900;
     font-size: clamp(2rem, 8vw, 2.6rem);
     letter-spacing: -0.03em;
     line-height: 1;
+    margin-bottom: 0.2rem;
 }
 
 /* Avatar */
@@ -511,7 +520,7 @@ a {
 }
 
 .filler-text {
-    font-family: var(--font-heading);
+    font-family: "DrukWideBold";
     font-weight: 900;
     font-size: 2.2rem;
     color: rgba(255, 255, 255, 0.06);
@@ -611,7 +620,7 @@ a {
 }
 
 .e4u5-logo {
-    font-family: var(--font-heading);
+    font-family: "DrukWideBold";
     font-weight: 900;
     font-size: 1.3rem;
     letter-spacing: 0.12em;
