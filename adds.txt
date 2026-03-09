@@ -1,0 +1,15 @@
+  <div class="nav-footer">
+                <div class="nav-social">
+                    <a href="https://www.instagram.com/_endforus/" aria-label="Instagram" target="_blank"><i class="ph ph-instagram-logo"></i></a>
+                    <a href="https://x.com/EndForUX" aria-label="X" target="_blank"><i class="ph ph-x-logo"></i></a>
+                    <a href="#" aria-label="TikTok"><i class="ph ph-tiktok-logo"></i></a>
+                    <a href="https://t.me/+YPSlUatYZYNjMjJh" aria-label="Telegram" target="_blank"><i class="ph ph-telegram-logo"></i></a>
+                    <a href="https://patreon.com/EndForUs?utm_medium=unknown&utm_source=join_link&utm_campaign=creatorshare_creator&utm_content=copyLink" aria-label="Patreon" target="_blank"><i class="ph ph-patreon-logo"></i></a>
+                    <a href="#" aria-label="Website" target="_blank"><i class="ph ph-globe"></i></a>
+                    <a href="https://www.pinterest.com/EndForUs/" aria-label="Pinterest" target="_blank"><i class="ph ph-pinterest-logo"></i></a>
+                </div>
+                <p class="nav-credits">Curated by EndForUs &mdash; 2026</p>
+            </div>
+
+
+            Apartado de Iconos de la pagina Linktree
