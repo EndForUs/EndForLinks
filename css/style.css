@@ -505,7 +505,7 @@ a {
     line-height: 1.4;
 }
 
-/* ── Filler Block ── */
+/* ── Filler Block 1/2 ─── */
 .btn-filler {
     width: calc(50% - var(--gap) / 2);
     min-height: 72px;
@@ -531,6 +531,34 @@ a {
     user-select: none;
     pointer-events: none;
 }
+
+/* ── Filler Block 2/2 ─── */
+.btn-filler2 {
+    width: calc(105% - var(--gap) / 1);
+    min-height: 72px;
+    background: var(--color-black);
+    border: 1px solid var(--color-border-dim);
+    border-radius: var(--radius);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.filler-text2 {
+    font-family: "DrukWideBold";
+    font-weight: 900;
+    font-size: 2.2rem;
+    color: rgba(255, 255, 255, 0.06);
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    transform: rotate(-25deg) scale(1.4);
+    white-space: nowrap;
+    user-select: none;
+    pointer-events: none;
+}
+
 
 /* ═══════════════════════════════════════════════════
    BENTO GRID
@@ -590,6 +618,7 @@ a {
     padding: 1.5rem;
     border-radius: var(--radius);
     text-align: center;
+    font-style: italic;
 }
 
 .section-label {
